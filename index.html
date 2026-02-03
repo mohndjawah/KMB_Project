@@ -2,10 +2,21 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>مشروع KMB</title>
+    <title>مشروع KMB - NoSQL</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>مرحباً دكتور، هذا مشروع فريق KMB</h1>
-    <p>جاري العمل على ربط قاعدة بيانات NoSQL...</p>
+    <div class="container">
+        <h1>نظام إدارة البيانات (KMB)</h1>
+        <p>مشروع NoSQL باستخدام Firebase</p>
+        
+        <input type="text" id="itemName" placeholder="أدخل اسماً لتخزينه في القاعدة">
+        <button id="addBtn">إرسال البيانات</button>
+        
+        <div id="status"></div>
+        <ul id="dataList"></ul>
+    </div>
+
+    <script type="module" src="app.js"></script>
 </body>
 </html>
