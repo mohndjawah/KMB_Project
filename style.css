@@ -1,0 +1,32 @@
+body {
+    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex; justify-content: center; align-items: center; height: 100vh;
+    overflow: hidden; color: white;
+}
+.background {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%; animation: gradientBG 15s ease infinite;
+    z-index: -1;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.container {
+    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+    padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3); width: 350px; text-align: center;
+}
+input {
+    width: 90%; padding: 12px; margin: 10px 0; border-radius: 10px;
+    border: none; outline: none; background: rgba(255,255,255,0.2); color: white;
+}
+button {
+    width: 100%; padding: 12px; border-radius: 10px; border: none;
+    background: #00d2ff; color: white; font-weight: bold; cursor: pointer;
+    transition: 0.3s; margin-top: 15px;
+}
+button:hover { background: #3a7bd5; transform: scale(1.05); }
+#toggleText { cursor: pointer; font-size: 0.8em; margin-top: 15px; text-decoration: underline; }
