@@ -47,3 +47,15 @@ document.getElementById('mainBtn').onclick = async () => {
         msg.innerText = "خطأ: تأكد من صحة البريد أو كلمة المرور";
     }
 };
+
+
+
+
+// وظيفة زر الخروج
+window.logout = function() {
+    // يمكنك إضافة رسالة تأكيد بسيطة إذا أردت
+    alert("تم تسجيل الخروج.. نراكم قريباً!");
+    
+    // العودة لصفحة تسجيل الدخول
+    window.location.href = "login.html";
+};
