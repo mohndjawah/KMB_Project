@@ -7,3 +7,15 @@ try {
         errorElement.style.display = "block";
         errorElement.innerText = "⚠️ البريد أو كلمة المرور غير صحيحة، حاول مرة أخرى!";
     }
+
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAHKkzsldPVlYyVzrSnD_0CSx6KjBP_Wzo",
+  authDomain: "kmb-project-e8baa.firebaseapp.com",
+  projectId: "kmb-project-e8baa",
+  storageBucket: "kmb-project-e8baa.firebasestorage.app",
+  messagingSenderId: "76861686082",
+  appId: "1:76861686082:web:acd987feef1dec9a6448db",
+  measurementId: "G-ZVQNTY9GEK"
+};
