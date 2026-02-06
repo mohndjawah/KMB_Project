@@ -1,50 +1,49 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
+// === ضع كودك (Config) الذي نسخته من Firebase هنا ===
 const firebaseConfig = {
-  // ضع كودك الذي نسخته هنا يا درغام
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    // ... بقية الكود
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-let isLoginMode = true;
+let isLogin = true;
 
-// التبديل بين التسجيل والدخول
-window.toggleAuth = () => {
-    isLoginMode = !isLoginMode;
-    document.getElementById('auth-title').innerText = isLoginMode ? "تسجيل الدخول" : "إنشاء حساب";
-    document.getElementById('mainBtn').innerText = isLoginMode ? "دخول" : "تسجيل";
-    document.getElementById('toggleText').innerText = isLoginMode ? "ليس لديك حساب؟ حساب جديد" : "لديك حساب؟ سجل دخولك";
+// وظيفة التبديل بين الدخول والتسجيل
+window.switchMode = () => {
+    isLogin = !isLogin;
+    document.getElementById('form-title').innerText = isLogin ? "تسجيل الدخول" : "إنشاء حساب جديد";
+    document.getElementById('mainBtn').innerText = isLogin ? "دخول للموقع" : "تسجيل حساب";
+    document.getElementById('toggleLink').innerText = isLogin ? "ليس لديك حساب؟ إنشاء حساب" : "لديك حساب؟ سجل دخولك";
 };
 
+// وظيفة الزر الرئيسي
 document.getElementById('mainBtn').onclick = async () => {
     const email = document.getElementById('email').value;
     const pass = document.getElementById('password').value;
-    const errorMsg = document.getElementById('error-msg');
+    const msg = document.getElementById('message');
 
     try {
-        if (isLoginMode) {
+        if (isLogin) {
             await signInWithEmailAndPassword(auth, email, pass);
         } else {
             await createUserWithEmailAndPassword(auth, email, pass);
         }
-        document.getElementById('auth-section').style.display = 'none';
-        document.getElementById('home-section').style.display = 'block';
-    } catch (error) {
-        errorMsg.style.display = 'block';
-        errorMsg.innerText = "خطأ: كلمة المرور غير صحيحة أو الحساب غير موجود";
+        // إخفاء واجهة الدخول وإظهار الرئيسية
+        document.getElementById('auth-card').classList.add('animate__animated', 'animate__fadeOutDown');
+        setTimeout(() => {
+            document.getElementById('auth-card').style.display = 'none';
+            document.getElementById('home-screen').style.display = 'block';
+            document.getElementById('home-screen').classList.add('animate__animated', 'animate__backInUp');
+            document.getElementById('user-display').innerText = email;
+        }, 500);
+    } catch (e) {
+        msg.style.display = 'block';
+        msg.innerText = "خطأ: تأكد من صحة البريد أو كلمة المرور";
     }
-};
-
-
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAHKkzsldPVlYyVzrSnD_0CSx6KjBP_Wzo",
-  authDomain: "kmb-project-e8baa.firebaseapp.com",
-  projectId: "kmb-project-e8baa",
-  storageBucket: "kmb-project-e8baa.firebasestorage.app",
-  messagingSenderId: "76861686082",
-  appId: "1:76861686082:web:acd987feef1dec9a6448db",
-  measurementId: "G-ZVQNTY9GEK"
 };
