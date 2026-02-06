@@ -8,8 +8,8 @@ const firebaseConfig = {
   projectId: "kmb-project-e8baa",
   storageBucket: "kmb-project-e8baa.firebasestorage.app",
   messagingSenderId: "76861686082",
-  appId: "1:76861686082:web:acd987feef1dec9a6448db",
-  measurementId: "G-ZVQNTY9GEK"
+  appId: "1:76861686082:web:850319fa7fa82de56448db",
+  measurementId: "G-56SWVHXXQY"
 };
 
 const app = initializeApp(firebaseConfig);
