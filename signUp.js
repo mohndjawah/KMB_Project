@@ -1,8 +1,14 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-const firebaseConfig = { 
-    // الصق كود الـ Config الخاص بك هنا يا درغام
+const firebaseConfig = {
+  apiKey: "AIzaSyAHKkzsldPVlYyVzrSnD_0CSx6KjBP_Wzo",
+  authDomain: "kmb-project-e8baa.firebaseapp.com",
+  projectId: "kmb-project-e8baa",
+  storageBucket: "kmb-project-e8baa.firebasestorage.app",
+  messagingSenderId: "76861686082",
+  appId: "1:76861686082:web:acd987feef1dec9a6448db",
+  measurementId: "G-ZVQNTY9GEK"
 };
 
 const app = initializeApp(firebaseConfig);
