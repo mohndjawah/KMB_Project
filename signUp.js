@@ -21,7 +21,7 @@ document.getElementById('signUpBtn').onclick = async () => {
     try {
         await createUserWithEmailAndPassword(auth, email, pass);
         // ظهور رسالة النجاح
-        alert("🎉 مبروك يا درغام! تم إنشاء حسابك بنجاح في قاعدة بيانات NoSQL.");
+        alert("🎉 مبروك ! تم إنشاء حسابك بنجاح في قاعدة بيانات NoSQL.");
         
         // التحويل فوراً لصفحة تسجيل الدخول بعد الضغط على OK
         window.location.href = "index.html"; 
