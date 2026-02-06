@@ -16,6 +16,15 @@
             <p>لقد سجلت دخولك بنجاح إلى نظام NoSQL الاحترافي</p>
         </div>
     </main>
-    <script src="Home.js"></script>
+    <script src="Home.js">
+        // وظيفة زر الخروج
+window.logout = function() {
+    // يمكنك إضافة رسالة تأكيد بسيطة إذا أردت
+    alert("تم تسجيل الخروج.. نراكم قريباً!");
+    
+    // العودة لصفحة تسجيل الدخول
+    window.location.href = "login.html";
+};
+    </script>
 </body>
 </html>
