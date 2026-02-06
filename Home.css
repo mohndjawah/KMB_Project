@@ -1,0 +1,5 @@
+body { margin: 0; background: #0f172a; color: white; font-family: sans-serif; }
+nav { display: flex; justify-content: space-between; padding: 20px 50px; background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.1); }
+main { display: flex; justify-content: center; align-items: center; height: 80vh; }
+.welcome-card { text-align: center; padding: 50px; border-radius: 30px; background: linear-gradient(45deg, #4facfe, #00f2fe); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+button { padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer; background: #ff4d4d; color: white; }
