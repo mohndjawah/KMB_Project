@@ -8,7 +8,7 @@
 <body>
     <nav>
         <h2>KMB System</h2>
-        <button onclick="logout()">خروج</button>
+        <button onclick="logoutUser()">خروج</button>
     </nav>
     <main>
         <div class="welcome-card">
@@ -16,16 +16,17 @@
             <p>لقد سجلت دخولك بنجاح إلى نظام NoSQL الاحترافي</p>
         </div>
     </main>
-    <!-- <script src="Home.js"> -->
+
     <script>
-        // وظيفة زر الخروج
-window.logout = function() {
-    // يمكنك إضافة رسالة تأكيد بسيطة إذا أردت
-    alert("تم تسجيل الخروج.. نراكم قريباً!");
-    
-    // العودة لصفحة تسجيل الدخول
-    window.location.href = "index.html";
-};
+        // استخدام وظيفة عادية وبسيطة جداً
+        function logoutUser() {
+            console.log("تم الضغط على زر الخروج"); // للتأكد في المتصفح
+            alert("تم تسجيل الخروج.. نراكم قريباً!");
+            
+            // جرب هذا المسار الذي يعود للخلف خطوة واحدة ثم يفتح index.html
+            // لضمان الوصول للملف الصحيح في GitHub Pages
+            window.location.href = "index.html";
+        }
     </script>
 </body>
 </html>
